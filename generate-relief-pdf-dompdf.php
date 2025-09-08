@@ -101,7 +101,7 @@ $html = '
         .info-value { display: table-cell; padding: 8px 10px; border-bottom: 1px solid #dee2e6; vertical-align: top; }
         
         .needs-list { background: #ffe6e6; padding: 15px; border-radius: 5px; margin: 10px 0; border: 1px solid #ffcccc; }
-        .need-badge { display: inline-block; background: #dc3545; color: white; padding: 4px 8px; margin: 2px; border-radius: 3px; font-size: 10px; }
+        .need-badge { display: inline-block; background: #dc3545; color: white; padding: 4px 8px; margin: 5px; border-radius: 3px; font-size: 10px; }
         
         .status-box { padding: 15px; border-radius: 5px; margin: 10px 0; }
         .status-urgent { background: ' . $urgency_info['bg'] . '; border: 2px solid ' . $urgency_info['color'] . '; }
@@ -124,7 +124,7 @@ $html = '
 </head>
 <body>
     <div class="header">
-        <h1>❤️ SEVA CONNECT</h1>
+        <h1> SEVA CONNECT</h1>
         <div class="subtitle">Relief Request Report</div>
         <div class="subtitle">Generated: ' . date('F d, Y \a\t g:i A') . '</div>
     </div>
@@ -247,9 +247,9 @@ $html .= '
 
 if (!empty($request['needs'])) {
     $needs = explode(', ', $request['needs']);
-    $html .= '<div class="needs-list"><strong>Support Needed:</strong><br>';
+    $html .= '<div class="needs-list p-2"><strong>Support Needed:</strong><br>';
     foreach ($needs as $need) {
-        $html .= '<span class="need-badge mt-2">' . htmlspecialchars(trim($need)) . '</span>';
+        $html .= '<span class="need-badge mt-2" >' . htmlspecialchars(trim($need)) . '</span>';
     }
     $html .= '</div>';
 } else {
@@ -326,10 +326,6 @@ $html .= '
             <div class="info-row">
                 <div class="info-label">Last Updated</div>
                 <div class="info-value">' . date('F d, Y \a\t g:i A', strtotime($request['updated_at'])) . '</div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Database ID</div>
-                <div class="info-value">' . $request['id'] . '</div>
             </div>';
 
 if (!empty($request['assigned_volunteer_id'])) {

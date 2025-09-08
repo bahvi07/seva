@@ -92,7 +92,7 @@ $html = '
 </head>
 <body>
     <div class="header">
-        <h1>🙏 SEVA CONNECT</h1>
+        <h1>SEVA CONNECT</h1>
         <div class="subtitle">Volunteer Profile Report</div>
         <div class="subtitle">Generated: ' . date('F d, Y \a\t g:i A') . '</div>
     </div>

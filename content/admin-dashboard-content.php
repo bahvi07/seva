@@ -146,7 +146,7 @@ if ($conn !== null) {
                     <div class="card-body p-0">
                         
                         <!-- VOLUNTEERS TABLE -->
-                        <div class="admin-table-container" id="volunteerTable">
+                        <div class="admin-table-container p-3" id="volunteerTable">
                             <div class="table-responsive">
                                 <table class="table table-hover align-middle mb-0" style="min-width: 1200px;">
                                     <thead class="table-dark sticky-top">
@@ -300,7 +300,7 @@ if ($conn !== null) {
                         </div>
 
                         <!-- RELIEF REQUESTS TABLE -->
-                        <div class="admin-table-container" id="reliefTable" style="display: none;">
+                        <div class="admin-table-containerc p-3" id="reliefTable" style="display: none;">
                             <div class="table-responsive">
                                 <table class="table table-hover align-middle mb-0" style="min-width: 1200px;">
                                     <thead class="table-dark sticky-top">
@@ -681,4 +681,77 @@ function viewVolunteerAssignments(volunteerId) {
     window.open(`volunteer-assignments.php?id=${volunteerId}`, '_blank');
 }
 
+// Initialize DataTables
+let volunteerTable, reliefTable;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize DataTable for Volunteers
+    volunteerTable = $('table:first').DataTable({
+        responsive: true,
+        order: [[0, 'desc']],
+        pageLength: 25,
+        dom: '<"d-flex justify-content-between align-items-center mb-3"f<"ms-3">l>rtip',
+        language: {
+            search: "",
+            searchPlaceholder: "Search volunteers...",
+            lengthMenu: "Show _MENU_ entries",
+            info: "Showing _START_ to _END_ of _TOTAL_ entries",
+            infoEmpty: "No entries found",
+            infoFiltered: "(filtered from _MAX_ total entries)"
+        },
+        initComplete: function() {
+            $('.dataTables_filter input').addClass('form-control');
+            $('.dataTables_length select').addClass('form-select');
+        }
+    });
+
+    // Initialize DataTable for Relief Requests
+    reliefTable = $('table:eq(1)').DataTable({
+        responsive: true,
+        order: [[0, 'desc']],
+        pageLength: 25,
+        dom: '<"d-flex justify-content-between align-items-center mb-3"f<"ms-3">l>rtip',
+        language: {
+            search: "",
+            searchPlaceholder: "Search relief requests...",
+            lengthMenu: "Show _MENU_ entries",
+            info: "Showing _START_ to _END_ of _TOTAL_ entries",
+            infoEmpty: "No entries found",
+            infoFiltered: "(filtered from _MAX_ total entries)"
+        },
+        initComplete: function() {
+            $('.dataTables_filter input').addClass('form-control');
+            $('.dataTables_length select').addClass('form-select');
+        },
+        columnDefs: [
+            { orderable: false, targets: -1 } // Make the last column (actions) not sortable
+        ]
+    });
+
+    // Update the table toggle function to handle DataTables
+    const updateDisplay = () => {
+        const showVolunteers = document.getElementById('showVolunteers').checked;
+        const volunteerTableContainer = document.getElementById('volunteerTable');
+        const reliefTableContainer = document.getElementById('reliefTable');
+        
+        if (showVolunteers) {
+            volunteerTableContainer.style.display = 'block';
+            reliefTableContainer.style.display = 'none';
+            volunteerTable.columns.adjust().responsive.recalc();
+            document.getElementById('currentTableTitle').innerHTML = '<i class="bi bi-people me-2"></i>Volunteer Registrations';
+        } else {
+            volunteerTableContainer.style.display = 'none';
+            reliefTableContainer.style.display = 'block';
+            reliefTable.columns.adjust().responsive.recalc();
+            document.getElementById('currentTableTitle').innerHTML = '<i class="bi bi-heart-pulse me-2"></i>Relief Requests';
+        }
+    };
+
+    // Add event listeners
+    const volunteerToggle = document.getElementById('showVolunteers');
+    const reliefToggle = document.getElementById('showRelief');
+    
+    if (volunteerToggle) volunteerToggle.addEventListener('change', updateDisplay);
+    if (reliefToggle) reliefToggle.addEventListener('change', updateDisplay);
+});
 </script>

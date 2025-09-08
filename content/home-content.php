@@ -14,15 +14,6 @@
                         communities in times of need. Whether you wish to serve others or seek assistance, 
                         we unite hearts in the spirit of <em>"Sarbat da Bhala"</em> - welfare of all.
                     </p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#services" class="btn btn-warning btn-lg rounded-pill px-4">
-                            <i class="bi bi-arrow-down-circle me-2"></i>
-                            Start Your Journey
-                        </a>
-                        <a href="#  about" class="btn btn-outline-light btn-lg rounded-pill px-4">
-                            Learn About Seva
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-6">

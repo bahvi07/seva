@@ -345,20 +345,6 @@ try {
                         </div>
                         <?php endif; ?>
                         <hr>
-                        <!-- <div class="d-grid gap-2">
-                            <button class="btn btn-success btn-sm">
-                                <i class="bi bi-check-circle me-1"></i>Approve Request
-                            </button>
-                            <button class="btn btn-primary btn-sm">
-                                <i class="bi bi-person-plus me-1"></i>Assign Volunteer
-                            </button>
-                            <button class="btn btn-warning btn-sm">
-                                <i class="bi bi-pencil me-1"></i>Update Status
-                            </button>
-                            <button class="btn btn-outline-danger btn-sm">
-                                <i class="bi bi-x-circle me-1"></i>Reject Request
-                            </button>
-                        </div> -->
                     </div>
                 </div>
             </div>

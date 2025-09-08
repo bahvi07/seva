@@ -234,17 +234,6 @@ try {
                             <span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Accepted</span>
                         </div>
                         <hr>
-                            <!-- <div class="d-grid gap-2">
-                                <button class="btn btn-success btn-sm">
-                                    <i class="bi bi-person-check me-1"></i>Approve Volunteer
-                                </button>
-                                <button class="btn btn-warning btn-sm">
-                                    <i class="bi bi-pencil me-1"></i>Edit Details
-                                </button>
-                                <button class="btn btn-outline-danger btn-sm">
-                                    <i class="bi bi-person-x me-1"></i>Reject Application
-                                </button>
-                            </div> -->
                     </div>
                 </div>
             </div>

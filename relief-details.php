@@ -345,7 +345,7 @@ try {
                         </div>
                         <?php endif; ?>
                         <hr>
-                        <div class="d-grid gap-2">
+                        <!-- <div class="d-grid gap-2">
                             <button class="btn btn-success btn-sm">
                                 <i class="bi bi-check-circle me-1"></i>Approve Request
                             </button>
@@ -358,7 +358,7 @@ try {
                             <button class="btn btn-outline-danger btn-sm">
                                 <i class="bi bi-x-circle me-1"></i>Reject Request
                             </button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

@@ -1,0 +1,18 @@
+#mapPreview .alert {
+    margin-bottom: 0;
+}
+
+.input-group .btn {
+    border-color: var(--sikh-saffron);
+    color: var(--sikh-saffron);
+}
+
+.input-group .btn:hover {
+    background-color: var(--sikh-saffron);
+    border-color: var(--sikh-saffron);
+    color: white;
+}
+
+.img-thumbnail {
+    border: 2px solid var(--sikh-saffron);
+}
